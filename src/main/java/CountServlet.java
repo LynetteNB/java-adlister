@@ -13,11 +13,14 @@ public class CountServlet extends HttpServlet {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
         String reset = req.getParameter("reset");
-        if(reset != null && reset.equals("true")) {
+        if(reset != null && reset.equalsIgnoreCase("reset")) {
             count = 0;
         } else {
             count ++;
         }
         out.println("<h1>" + count + "</h1>");
+        out.println("<form>");
+        out.println("<input name = 'reset' value='Reset' type='submit'>");
+        out.println("</form>");
     }
 }
