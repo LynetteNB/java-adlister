@@ -17,5 +17,9 @@ public class HelloWorldServlet extends HttpServlet {
         } else {
             out.println("<h1>Hello, World!</h1>");
         }
+        out.println("<form>");
+        out.println("Name: ");
+        out.println("<input name = 'name'>");
+        out.println("</form>");
     }
 }
