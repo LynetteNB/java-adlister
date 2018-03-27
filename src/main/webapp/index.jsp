@@ -6,6 +6,7 @@
     <%@include file="partials/head.jsp"%>
 </head>
 <body>
+<%@ include file="partials/navbar.jsp" %>
     <c:if test="true">
         <h1>Variable names should be very descriptive</h1>
     </c:if>
