@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Login</title>
+    <%@include file="partials/head.jsp"%>
 </head>
 <body>
 <%@ include file="partials/navbar.jsp" %>
@@ -22,14 +23,18 @@
     }
 %>
 <form method="POST" action="login.jsp">
-    <label>
-        Username: <input type="text" name="username">
-    </label>
-    <label>
-        Password: <input type="password" name="password">
-    </label>
-    <input type="submit">
+    <div class="form-group">
+        <label>Username:
+            <input type="text" class="form-control" name="username" placeholder="Username">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Password
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+<%@include file="partials/foot.jsp"%>
 </body>
 </html>
