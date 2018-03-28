@@ -1,5 +1,6 @@
 package Controllers;
 
+import Models.DaoFactory;
 import Models.ListAdsDao;
 import Models.Ad;
 
@@ -14,9 +15,7 @@ import java.util.List;
 @WebServlet(urlPatterns = "/ads")
 public class AdsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ListAdsDao ads = new ListAdsDao();
-        List<Ad> adList = ads.all();
-        request.setAttribute("ads", adList);
+        request.setAttribute("ads", DaoFactory.getAdsDao().all());
         request.getRequestDispatcher("/WEB-INF/Ads/index.jsp").forward(request, response);
     }
 }
