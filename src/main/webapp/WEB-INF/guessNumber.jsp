@@ -11,7 +11,9 @@
     <title>Guess A Number</title>
 </head>
 <body>
-<form action="/guess" method="POST">
+<h1 style="text-align: center">Guess a Random Number</h1>
+<img style="display: block; margin: auto" src="https://cdn.crunchify.com/wp-content/uploads/2013/05/randomnumber-crunchify.png" alt="">
+<form action="/guess" method="POST" style="text-align: center">
     <label> Pick a number between 1 & 100:
         <input type="text" name="num">
     </label>
