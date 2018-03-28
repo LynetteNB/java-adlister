@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1 style="text-align: center">Guess a Random Number</h1>
-<img style="display: block; margin: auto" src="${url}" alt="" style="height: 100px">
+<img style="display: block; margin: auto; height: 100px" src="${url}" alt="">
 <h1 style="text-align: center">${message}</h1>
 <form action="/guess" style="text-align: center">
     <input type="submit" value="Guess Again?">
