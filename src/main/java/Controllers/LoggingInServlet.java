@@ -19,6 +19,8 @@ public class LoggingInServlet extends HttpServlet {
         request.setAttribute("password", password);
         if (username != null && password != null && username.equals("admin") && password.equals("password")) {
             response.sendRedirect("/profile");
+        } else {
+            response.sendRedirect("/login");
         }
     }
 }

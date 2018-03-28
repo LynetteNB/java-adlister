@@ -11,15 +11,33 @@
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp"/>
     <title>Ads</title>
+    <style>
+        .adsToDisplay{
+            display: flex;
+            justify-content: center;
+        }
+        .adDisplay {
+            height: 250px;
+            width: 250px;
+            margin: 20px;
+            border: 1px solid dimgray;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: -5px 5px 10px dimgray;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<c:forEach var="ad" items="${ads}">
-    <div>
-        <h2>${ad.title}</h2>
-        <p>${ad.description}</p>
-    </div>
-</c:forEach>
+<div class="adsToDisplay">
+    <c:forEach var="ad" items="${ads}">
+        <div class = "adDisplay">
+            <h3>${ad.title}</h3>
+            <hr>
+            <p>${ad.description}</p>
+        </div>
+    </c:forEach>
+</div>
 
 </body>
 </html>
