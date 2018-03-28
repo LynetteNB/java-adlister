@@ -13,7 +13,9 @@
 <body>
 <form action="/pickcolor" method="POST">
     <label>What's your favorite color?
-        <input type="text" name="color">
+        <input type="color" name="color">
+        <%--<input type="text" name="color">--%>
+        <button>Submit</button>
     </label>
 </form>
 </body>
