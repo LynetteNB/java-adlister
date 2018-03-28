@@ -7,7 +7,7 @@ import java.io.IOException;
 
 @WebServlet(name = "GuessingGameServlet", urlPatterns="/guess")
 public class GuessingGameServlet extends HttpServlet {
-    int randomNum = (int) Math.floor(Math.random()*100);
+    private int randomNum = (int) Math.floor(Math.random()*100);
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int num = Integer.parseInt(request.getParameter("num"));
         String message="";
