@@ -4,10 +4,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(name = "ViewProfileServlet", urlPatterns = "/profile")
-public class ViewProfileServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/ads")
+public class AdsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+        ListAdsDao ads = new ListAdsDao();
+        List<Ad> adList = ads.all();
+        request.setAttribute("ads", adList);
+        request.getRequestDispatcher("/WEB-INF/Ads/index.jsp").forward(request, response);
     }
 }
