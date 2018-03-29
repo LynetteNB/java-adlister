@@ -21,9 +21,10 @@ public class AdsServlet extends HttpServlet {
         List<Ad> adList = DaoFactory.getAdsDao().all();
         String adTitle = request.getParameter("title");
         String adDescription = request.getParameter("description");
-        Ad newAd = new Ad(adList.size(), 2, adTitle, adDescription);
+        Ad newAd = new Ad(adList.size()+1, 2, adTitle, adDescription);
         adList.add(newAd);
         request.setAttribute("ads", adList);
-        request.getRequestDispatcher("/WEB-INF/Ads/index.jsp").forward(request, response);
+        response.sendRedirect("/ads");
     }
+
 }
