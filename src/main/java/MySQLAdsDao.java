@@ -10,7 +10,7 @@ public class MySQLAdsDao implements Ads {
     public MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
-            this.connection = DriverManager.getConnection(
+            connection = DriverManager.getConnection(
                     config.getUrl(),
                     config.getUsername(),
                     config.getPassword()
@@ -35,11 +35,11 @@ public class MySQLAdsDao implements Ads {
         return adList;
     };
     public Long insert(Ad ad){
-        Statement stmt = null;
         Long id = (long) 0;
         try {
-            stmt = connection.createStatement();
+            Statement stmt = connection.createStatement();
             String query = "INSERT INTO ads (title, description, user_id) VALUES ('" + ad.getTitle() + "', '" + ad.getDescription() + "', " + ad.getUserId() + ")";
+            //"INSERT INTO ads (title, description, user_id) VALUES ('title', 'description', 1)"
             stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stmt.getGeneratedKeys();
             if(rs.next()){
